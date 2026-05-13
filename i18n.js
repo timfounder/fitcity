@@ -17,7 +17,7 @@ const i18n = {
     'hero.title.2': 'сейчас.',
     'hero.title.3': 'Сильнее завтра.',
     'hero.aside': 'Премиальные тренажёры. Мотивирующее фитнес-сообщество. Атмосфера для твоих побед.',
-    'hero.coords': 'Mirzo Ulug\'bek, 3-3A',
+    'hero.coords': 'N 41.31° / E 69.27°<br>Mirzo Ulug\'bek, 3-3A',
     'hero.scroll': 'Scroll',
 
     // Ticker
@@ -245,7 +245,7 @@ const i18n = {
     'hero.title.2': 'boshlang.',
     'hero.title.3': 'Ertaga kuchliroq.',
     'hero.aside': 'Premium trenajyorlar. Motivatsiya beruvchi fitnes-jamoa. G\'alabalaringiz uchun muhit.',
-    'hero.coords': 'Mirzo Ulug\'bek, 3-3A',
+    'hero.coords': 'N 41.31° / E 69.27°<br>Mirzo Ulug\'bek, 3-3A',
     'hero.scroll': 'Scroll',
 
     // Ticker
@@ -473,7 +473,7 @@ const i18n = {
     'hero.title.2': 'now.',
     'hero.title.3': 'Stronger tomorrow.',
     'hero.aside': 'Premium equipment. A motivating fitness community. The atmosphere your wins deserve.',
-    'hero.coords': 'Mirzo Ulug\'bek, 3-3A',
+    'hero.coords': 'N 41.31° / E 69.27°<br>Mirzo Ulug\'bek, 3-3A',
     'hero.scroll': 'Scroll',
 
     // Ticker
