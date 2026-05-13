@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if you ever add tooling)
+node_modules/
+package-lock.json
+
+# Local secrets (if you ever externalize the Telegram config)
+.env
+.env.local
+config.local.js

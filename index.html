@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050505" />
+<meta name="author" content="FITCITY CHIMGAN" />
+<meta name="generator" content="FITCITY" />
+<title>FITCITY CHIMGAN — Премиум фитнес-клуб в Ташкенте</title>
+<meta name="description" content="FitCity Chimgan — премиальные тренажёры, мотивирующее фитнес-сообщество, атмосфера для твоих побед. Mirzo Ulug'bek, Ташкент." />
+<meta name="keywords" content="фитнес Ташкент, FitCity, Chimgan, тренажёрный зал, абонемент, фитнес клуб, Mirzo Ulugbek" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="FITCITY CHIMGAN — Премиум фитнес-клуб в Ташкенте" />
+<meta property="og:description" content="Премиальные тренажёры. Мотивирующее фитнес-сообщество. Атмосфера для твоих побед." />
+<meta property="og:site_name" content="FITCITY CHIMGAN" />
+<meta property="og:locale" content="ru_RU" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="FITCITY CHIMGAN" />
+<meta name="twitter:description" content="Премиум фитнес-клуб в Ташкенте" />
+
+<!-- Favicon (SVG, two red bars from the logo) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050505'/%3E%3Cpolygon points='14,12 44,12 36,32 6,32' fill='%23ff0030'/%3E%3Cpolygon points='20,34 50,34 42,54 12,54' fill='%23ff0030'/%3E%3C/svg%3E" />
+
+<!-- JSON-LD Schema.org for local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GymOrFitnessClub",
+  "name": "FITCITY CHIMGAN",
+  "image": "",
+  "description": "Премиум фитнес-клуб в Ташкенте. Премиальные тренажёры, мотивирующее фитнес-сообщество, атмосфера для твоих побед.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mirzo Ulug'bek koʻchasi, 3-3A",
+    "addressLocality": "Tashkent",
+    "addressCountry": "UZ"
+  },
+  "telephone": "+998958848800",
+  "openingHours": "Mo-Su 06:00-23:00",
+  "priceRange": "800000-6800000 UZS",
+  "sameAs": [
+    "https://instagram.com/fitcity.chimgan"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress">
+  <div class="scroll-progress-bar"></div>
+  <div class="scroll-progress-pct" id="scrollPct">00</div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+  <div class="preloader-content">
+    <svg class="preloader-logo-svg" viewBox="0 0 320 88" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(0,8)">
+        <polygon points="6,4 36,4 30,28 0,28" fill="#ff0030">
+          <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0s" fill="freeze"/>
+        </polygon>
+        <polygon points="14,32 44,32 38,56 8,56" fill="#ff0030">
+          <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.15s" fill="freeze"/>
+        </polygon>
+      </g>
+      <text x="60" y="46" font-family="Barlow Condensed, Impact, sans-serif" font-size="56" fill="#ffffff" letter-spacing="2" font-weight="700" opacity="0">
+        FITCITY
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.3s" fill="freeze"/>
+      </text>
+      <g transform="translate(122,56)" opacity="0">
+        <polygon points="6,0 168,0 162,22 0,22" fill="#ff0030"/>
+        <text x="20" y="17" font-family="Barlow Condensed, Impact, sans-serif" font-size="20" fill="#ffffff" letter-spacing="4" font-weight="600">CHIMGAN</text>
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.6s" fill="freeze"/>
+      </g>
+    </svg>
+    <div class="preloader-bar"></div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo" data-cursor aria-label="FitCity Chimgan">
+    <svg class="logo-svg" viewBox="0 0 320 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Icon: two skewed red bars -->
+      <g transform="translate(0,8)">
+        <polygon points="6,4 36,4 30,28 0,28" fill="#ff0030"/>
+        <polygon points="14,32 44,32 38,56 8,56" fill="#ff0030"/>
+      </g>
+      <!-- FITCITY wordmark -->
+      <text x="60" y="46" font-family="Barlow Condensed, Impact, sans-serif" font-size="56" fill="#ffffff" letter-spacing="2" font-weight="700">FITCITY</text>
+      <!-- CHIMGAN skewed red tag -->
+      <g transform="translate(122,56)">
+        <polygon points="6,0 168,0 162,22 0,22" fill="#ff0030"/>
+        <text x="20" y="17" font-family="Barlow Condensed, Impact, sans-serif" font-size="20" fill="#ffffff" letter-spacing="4" font-weight="600">CHIMGAN</text>
+      </g>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-cursor data-i18n="nav.about">О нас</a></li>
+    <li><a href="#journey" data-cursor data-i18n="nav.journey">Твой путь</a></li>
+    <li><a href="#features" data-cursor data-i18n="nav.features">Возможности</a></li>
+    <li><a href="#pricing" data-cursor data-i18n="nav.pricing">Абонементы</a></li>
+    <li><a href="#coaches" data-cursor data-i18n="nav.coaches">Тренеры</a></li>
+    <li><a href="#location" data-cursor data-i18n="nav.location">Контакты</a></li>
+  </ul>
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn active" data-lang="ru" data-cursor>RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="uz" data-cursor>UZ</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en" data-cursor>EN</button>
+  </div>
+  <a href="#pricing" class="nav-cta" data-cursor data-magnetic>
+    <span data-i18n="nav.cta">Купить абонемент →</span>
+  </a>
+  <button class="mobile-menu-btn" aria-label="Меню">
+    <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+      <path d="M0 1H20M0 7H20M0 13H20" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" data-parallax="0.15"></div>
+  <canvas class="particles-canvas" id="particles"></canvas>
+  <div class="hero-frame"><span></span><span></span></div>
+
+  <div class="hero-marquee" data-parallax="0.4">
+    <div class="hero-marquee-track">FITCITY · POWER · STRENGTH · FITCITY · POWER · STRENGTH · FITCITY · POWER · STRENGTH · </div>
+  </div>
+
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span data-i18n="hero.eyebrow">FITCITY CHIMGAN · TASHKENT · 2026</span>
+      </div>
+      <h1 class="hero-title">
+        <div class="line"><span data-i18n="hero.title.1">Начни</span></div>
+        <div class="line"><span data-i18n="hero.title.2">сейчас.</span></div>
+        <div class="line"><span data-i18n="hero.title.3">Сильнее завтра.</span></div>
+      </h1>
+    </div>
+    <div class="hero-aside">
+      <p class="hero-aside-text" data-i18n="hero.aside">
+        Премиальные тренажёры. Мотивирующее фитнес-сообщество. Атмосфера для твоих побед.
+      </p>
+      <div class="hero-aside-code">
+        N 41.31° / E 69.27°<br>
+        Mirzo Ulug'bek, 3-3A
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span data-i18n="hero.scroll">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>
+      Новый филиал
+      <span class="ticker-dot"></span>
+      Премиум фитнес
+      <span class="ticker-dot"></span>
+      Mirzo Ulug'bek
+      <span class="ticker-dot"></span>
+      06:00 — 23:00
+      <span class="ticker-dot"></span>
+      Начни сейчас
+      <span class="ticker-dot"></span>
+      FITCITY CHIMGAN
+      <span class="ticker-dot"></span>
+    </span>
+    <span>
+      Новый филиал
+      <span class="ticker-dot"></span>
+      Премиум фитнес
+      <span class="ticker-dot"></span>
+      Mirzo Ulug'bek
+      <span class="ticker-dot"></span>
+      06:00 — 23:00
+      <span class="ticker-dot"></span>
+      Начни сейчас
+      <span class="ticker-dot"></span>
+      FITCITY CHIMGAN
+      <span class="ticker-dot"></span>
+    </span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid reveal-stagger">
+    <div class="stat">
+      <div class="stat-num" data-target="500">500+</div>
+      <div class="stat-label" data-i18n="stats.members.label">Участников</div>
+      <div class="stat-desc" data-i18n="stats.members.desc">Растущее сообщество</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="100">100+</div>
+      <div class="stat-label" data-i18n="stats.workouts.label">Тренировок в неделю</div>
+      <div class="stat-desc" data-i18n="stats.workouts.desc">Любое направление</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="10">10+</div>
+      <div class="stat-label" data-i18n="stats.coaches.label">Сертифицированных тренеров</div>
+      <div class="stat-desc" data-i18n="stats.coaches.desc">Профессионалы своего дела</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">99%</div>
+      <div class="stat-label" data-i18n="stats.satisfaction.label">Удовлетворённости</div>
+      <div class="stat-desc" data-i18n="stats.satisfaction.desc">Гарантированный результат</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-top reveal">
+      <div class="section-label" data-i18n="about.label">О клубе</div>
+      <h2 class="section-title about-title split-text">
+        <span data-i18n="about.title.1">Не просто зал.</span><br>
+        <span class="accent" data-i18n="about.title.2">Состояние.</span>
+      </h2>
+    </div>
+
+    <div class="about-bottom">
+      <div class="about-bottom-left reveal">
+        <p class="about-text" data-i18n="about.text.1">
+          FITCITY — это место, где спорт становится стилем жизни, а команда превращается в семью. Современное оборудование, опытные тренеры и персональные планы тренировок — всё, что нужно, чтобы прийти в лучшую форму в своей жизни.
+        </p>
+        <p class="about-text" data-i18n="about.text.2">
+          Главный герой? Нет. Просто один из нас. В FITCITY каждый — сильная личность.
+        </p>
+      </div>
+      <ul class="about-features reveal">
+        <li>
+          <span class="feature-num">/ 01</span>
+          <span class="feature-text" data-i18n="about.feature.1">Премиальные тренажёры последнего поколения</span>
+        </li>
+        <li>
+          <span class="feature-num">/ 02</span>
+          <span class="feature-text" data-i18n="about.feature.2">Мотивирующее фитнес-сообщество</span>
+        </li>
+        <li>
+          <span class="feature-num">/ 03</span>
+          <span class="feature-text" data-i18n="about.feature.3">Атмосфера для твоих побед</span>
+        </li>
+        <li>
+          <span class="feature-num">/ 04</span>
+          <span class="feature-text" data-i18n="about.feature.4">Персональные планы и сопровождение</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY (sticky scroll story) -->
+<section class="journey" id="journey">
+  <div class="journey-intro reveal">
+    <div class="section-label" data-i18n="journey.label">Твой путь</div>
+    <h2 class="section-title split-text"><span data-i18n="journey.title.1">От первого шага до</span> <span class="accent" data-i18n="journey.title.2">результата</span></h2>
+    <p data-i18n="journey.intro">Четыре этапа, которые превращают тренировку в стиль жизни. Скролль, чтобы увидеть свой путь.</p>
+  </div>
+
+  <div class="journey-track" id="journeyTrack">
+    <div class="journey-pin">
+      <div class="journey-left">
+        <div class="journey-step-counter" id="stepCounter"><span data-i18n="journey.step">Этап</span> <span id="stepNum">01</span> / 04</div>
+
+        <div class="journey-stages">
+          <div class="journey-stage active" data-stage="0">
+            <h3 class="journey-stage-title" data-i18n="journey.stage.1.title">Старт</h3>
+            <p class="journey-stage-text" data-i18n="journey.stage.1.text">Бесплатная диагностика, замеры и составление персонального плана. Наш тренер определяет твою точку отсчёта — без неё нет настоящего прогресса.</p>
+          </div>
+
+          <div class="journey-stage" data-stage="1">
+            <h3 class="journey-stage-title" data-i18n="journey.stage.2.title">Тренировка</h3>
+            <p class="journey-stage-text" data-i18n="journey.stage.2.text">Силовые, кардио и групповые занятия по графику, который подходит именно тебе. Премиальные тренажёры, опытные тренеры и атмосфера, в которой хочется работать.</p>
+          </div>
+
+          <div class="journey-stage" data-stage="2">
+            <h3 class="journey-stage-title" data-i18n="journey.stage.3.title">Восстановление</h3>
+            <p class="journey-stage-text" data-i18n="journey.stage.3.text">Стретчинг, дыхательные практики, фитнес-бар и команда, которая поддержит. Восстановление — это не пауза. Это часть прогресса.</p>
+          </div>
+
+          <div class="journey-stage" data-stage="3">
+            <h3 class="journey-stage-title" data-i18n="journey.stage.4.title">Результат</h3>
+            <p class="journey-stage-text" data-i18n="journey.stage.4.text">Через 12 недель ты сравниваешь "до" и "сейчас" и понимаешь — это другой человек. Не главный герой. Просто один из нас.</p>
+          </div>
+        </div>
+
+        <div class="journey-progress">
+          <div class="journey-dot done"></div>
+          <div class="journey-dot"></div>
+          <div class="journey-dot"></div>
+          <div class="journey-dot"></div>
+        </div>
+      </div>
+
+      <div class="journey-right">
+        <div class="journey-visual">
+          <div class="journey-visual-layer l1 active" data-stage="0">
+            <div class="grid-overlay"></div>
+            <div class="meta" data-i18n-html="journey.visual.1.meta">Шаг / 01 · Диагностика</div>
+            <div class="num">01</div>
+            <div class="label"><span data-i18n="journey.visual.1.label.1">Старт</span><br><span class="accent" data-i18n="journey.visual.1.label.2">— замер</span></div>
+          </div>
+          <div class="journey-visual-layer l2" data-stage="1">
+            <div class="grid-overlay"></div>
+            <div class="meta" data-i18n-html="journey.visual.2.meta">Шаг / 02 · Тренировка</div>
+            <div class="num">02</div>
+            <div class="label"><span data-i18n="journey.visual.2.label.1">Силовая</span><br><span class="accent" data-i18n="journey.visual.2.label.2">— работа</span></div>
+          </div>
+          <div class="journey-visual-layer l3" data-stage="2">
+            <div class="grid-overlay"></div>
+            <div class="meta" data-i18n-html="journey.visual.3.meta">Шаг / 03 · Восстановление</div>
+            <div class="num">03</div>
+            <div class="label"><span data-i18n="journey.visual.3.label.1">Восстановление</span><br><span class="accent" data-i18n="journey.visual.3.label.2">— баланс</span></div>
+          </div>
+          <div class="journey-visual-layer l4" data-stage="3">
+            <div class="grid-overlay"></div>
+            <div class="meta" data-i18n-html="journey.visual.4.meta">Шаг / 04 · Результат</div>
+            <div class="num">04</div>
+            <div class="label"><span data-i18n="journey.visual.4.label.1">Результат</span><br><span class="accent" data-i18n="journey.visual.4.label.2">— ты</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-header reveal">
+    <div>
+      <div class="section-label" data-i18n="features.label">Возможности</div>
+      <h2 class="section-title split-text">
+        <span data-i18n="features.title.1">Всё для</span><br>
+        <span class="accent" data-i18n="features.title.2">результата</span>
+      </h2>
+    </div>
+    <p class="about-text" data-i18n="features.intro">
+      Шесть направлений, десятки программ и одна цель — твоя лучшая версия. Выбирай свой путь и начинай прямо сейчас.
+    </p>
+  </div>
+
+  <div class="features-grid reveal-stagger">
+    <div class="feature-card" data-cursor>
+      <div class="feature-num-corner">/ 01</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 8v8M18 8v8M3 10v4M21 10v4M9 5v14M15 5v14" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="feature-title" data-i18n="features.1.title">Силовая зона</h3>
+      <p class="feature-desc" data-i18n="features.1.desc">Свободные веса, профессиональные тренажёры и зона функционального тренинга для максимального прогресса.</p>
+    </div>
+
+    <div class="feature-card" data-cursor>
+      <div class="feature-num-corner">/ 02</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="feature-title" data-i18n="features.2.title">Кардио зал</h3>
+      <p class="feature-desc" data-i18n="features.2.desc">Беговые дорожки, эллипсоиды и велотренажёры с интегрированными программами выносливости.</p>
+    </div>
+
+    <div class="feature-card" data-cursor>
+      <div class="feature-num-corner">/ 03</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="feature-title" data-i18n="features.3.title">Групповые</h3>
+      <p class="feature-desc" data-i18n="features.3.desc">Йога, стретчинг, HIIT, бокс, танцевальные программы — более 100 тренировок в неделю.</p>
+    </div>
+
+    <div class="feature-card" data-cursor>
+      <div class="feature-num-corner">/ 04</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L3 7v6c0 5 3.5 9 9 11 5.5-2 9-6 9-11V7l-9-5z" stroke-linejoin="round"/>
+          <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="feature-title" data-i18n="features.4.title">Персональный коуч</h3>
+      <p class="feature-desc" data-i18n="features.4.desc">Индивидуальный подход, план питания и сопровождение профессионального тренера.</p>
+    </div>
+
+    <div class="feature-card" data-cursor>
+      <div class="feature-num-corner">/ 05</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="3" width="16" height="18" rx="1"/>
+          <path d="M4 9h16M12 3v18" stroke-linecap="round"/>
+          <circle cx="8" cy="6" r="0.6" fill="currentColor"/>
+          <circle cx="16" cy="6" r="0.6" fill="currentColor"/>
+        </svg>
+      </div>
+      <h3 class="feature-title" data-i18n="features.5.title">Premium раздевалки</h3>
+      <p class="feature-desc" data-i18n="features.5.desc">Просторные раздевалки с индивидуальными шкафчиками, душевые с горячей водой 24/7 и зона комфорта.</p>
+    </div>
+
+    <div class="feature-card" data-cursor>
+      <div class="feature-num-corner">/ 06</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 22c5-3 8-7 8-13V4l-8-2-8 2v5c0 6 3 10 8 13z" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="feature-title" data-i18n="features.6.title">Фитнес-бар</h3>
+      <p class="feature-desc" data-i18n="features.6.desc">Свежие смузи, протеиновые коктейли и спортивное питание — топливо для твоих побед.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-bg"></div>
+  <div class="pricing-header reveal">
+    <div class="section-label" data-i18n="pricing.label">Абонементы</div>
+    <h2 class="section-title split-text"><span data-i18n="pricing.title.1">Выбери свой</span> <span class="accent" data-i18n="pricing.title.2">путь</span></h2>
+    <p data-i18n="pricing.intro">Гибкие тарифы для любого ритма жизни. Чем длиннее период — тем выгоднее. Все абонементы включают доступ ко всем зонам клуба.</p>
+  </div>
+
+  <div class="pricing-grid reveal-stagger">
+    <div class="price-card" data-cursor>
+      <div class="price-tier" data-i18n="pricing.1.tier">Старт</div>
+      <h3 class="price-name" data-i18n="pricing.1.name">Месяц</h3>
+      <div class="price-amount">
+        <span class="price-num">800</span>
+        <span class="price-currency">000 сум</span>
+      </div>
+      <div class="price-period" data-i18n="pricing.1.period">в месяц</div>
+      <ul class="price-features">
+        <li data-i18n="pricing.1.f.1">Безлимитный доступ</li>
+        <li data-i18n="pricing.1.f.2">Все групповые программы</li>
+        <li data-i18n="pricing.1.f.3">Premium раздевалки и душ</li>
+        <li data-i18n="pricing.1.f.4">Гостевой визит в подарок</li>
+        <li data-i18n="pricing.1.f.5">Фитнес-тестирование</li>
+      </ul>
+      <a href="#form" class="price-cta" data-cursor>
+        <span data-i18n="pricing.cta">Оформить →</span>
+      </a>
+    </div>
+
+    <div class="price-card" data-cursor>
+      <div class="price-tier" data-i18n="pricing.2.tier">Баланс</div>
+      <h3 class="price-name" data-i18n="pricing.2.name">6 месяцев</h3>
+      <div class="price-amount">
+        <span class="price-num">4 200</span>
+        <span class="price-currency">000 сум</span>
+      </div>
+      <div class="price-period" data-i18n="pricing.2.period">6 месяцев</div>
+      <ul class="price-features">
+        <li data-i18n="pricing.2.f.1">Безлимитный доступ</li>
+        <li data-i18n="pricing.2.f.2">Все групповые программы</li>
+        <li data-i18n="pricing.2.f.3">Premium раздевалки и душ</li>
+        <li data-i18n="pricing.2.f.4">1 пробная с тренером</li>
+        <li data-i18n="pricing.2.f.5">Заморозка 14 дней</li>
+        <li data-i18n="pricing.2.f.6">Скидка на персональные</li>
+      </ul>
+      <a href="#form" class="price-cta" data-cursor>
+        <span data-i18n="pricing.cta">Оформить →</span>
+      </a>
+    </div>
+
+    <div class="price-card featured" data-cursor>
+      <div class="price-tier" data-i18n="pricing.3.tier">Лучший выбор</div>
+      <h3 class="price-name" data-i18n="pricing.3.name">Год</h3>
+      <div class="price-amount">
+        <span class="price-num">6 800</span>
+        <span class="price-currency">000 сум</span>
+      </div>
+      <div class="price-period" data-i18n="pricing.3.period">12 месяцев</div>
+      <ul class="price-features">
+        <li data-i18n="pricing.3.f.1">Безлимитный доступ 24/7</li>
+        <li data-i18n="pricing.3.f.2">Все групповые программы</li>
+        <li data-i18n="pricing.3.f.3">Premium раздевалки</li>
+        <li data-i18n="pricing.3.f.4">Персональный тренер 4 раза</li>
+        <li data-i18n="pricing.3.f.5">Заморозка 60 дней</li>
+        <li data-i18n="pricing.3.f.6">Брендированный мерч</li>
+      </ul>
+      <a href="#form" class="price-cta" data-cursor>
+        <span data-i18n="pricing.cta">Оформить →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator" id="calculator">
+  <div class="calculator-bg"></div>
+  <div class="calculator-inner">
+    <div class="calculator-header reveal">
+      <div class="section-label" data-i18n="calc.label">Калькулятор</div>
+      <h2 class="section-title split-text">
+        <span data-i18n="calc.title.1">Рассчитай свой</span><br>
+        <span class="accent" data-i18n="calc.title.2">абонемент</span>
+      </h2>
+      <p class="calculator-intro" data-i18n="calc.intro">Подбери параметры — и узнай итоговую стоимость с экономией. Реальное время.</p>
+    </div>
+
+    <div class="calculator-card reveal">
+      <div class="calc-controls">
+        <div class="calc-control">
+          <div class="calc-control-label" data-i18n="calc.duration">Длительность</div>
+          <div class="calc-options" data-calc="duration">
+            <button class="calc-opt" data-value="1" data-i18n="calc.duration.1">1 месяц</button>
+            <button class="calc-opt active" data-value="6" data-i18n="calc.duration.6">6 месяцев</button>
+            <button class="calc-opt" data-value="12" data-i18n="calc.duration.12">12 месяцев</button>
+          </div>
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-control-label">
+            <span data-i18n="calc.personal">Персональные тренировки в месяц</span>
+            <span class="calc-value">
+              <span id="calcPersonalVal">0</span>
+              <span data-i18n="calc.personal.unit">занятий</span>
+            </span>
+          </div>
+          <input type="range" class="calc-slider" id="calcPersonal" min="0" max="12" value="0" step="1" data-cursor>
+          <div class="calc-slider-ticks">
+            <span>0</span><span>4</span><span>8</span><span>12</span>
+          </div>
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-control-label" data-i18n="calc.freeze">Услуга заморозки</div>
+          <div class="calc-options" data-calc="freeze">
+            <button class="calc-opt active" data-value="0" data-i18n="calc.freeze.no">Нет</button>
+            <button class="calc-opt" data-value="1" data-i18n="calc.freeze.yes">Да</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <div class="calc-result-savings" id="calcSavingsBlock">
+          <span class="calc-result-savings-label" data-i18n="calc.savings">Экономия</span>
+          <span class="calc-result-savings-value">−<span id="calcSavings">0</span> 000 <span class="calc-currency">UZS</span></span>
+        </div>
+        <div class="calc-result-total">
+          <span class="calc-result-total-label" data-i18n="calc.total">Итого</span>
+          <span class="calc-result-total-value">
+            <span id="calcTotal">4 200</span>
+            <span class="calc-currency">000 UZS</span>
+          </span>
+          <span class="calc-result-period">
+            <span id="calcPeriodLabel" data-i18n="calc.period">за весь период</span>
+            · <span id="calcMonthly">700 000</span> <span data-i18n="calc.month">за месяц</span>
+          </span>
+        </div>
+        <a href="#form" class="calc-cta" data-cursor data-magnetic>
+          <span data-i18n="calc.cta">Оформить →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-header reveal">
+    <div>
+      <div class="section-label" data-i18n="gallery.label">Пространство</div>
+      <h2 class="section-title split-text"><span data-i18n="gallery.title.1">Внутри</span> <span class="accent">FITCITY</span></h2>
+    </div>
+    <p class="about-text" data-i18n="gallery.intro">
+      Современный дизайн, продуманное зонирование и атмосфера, в которой хочется тренироваться каждый день. Загляни внутрь.
+    </p>
+  </div>
+
+  <div class="gallery-grid reveal-stagger">
+    <div class="gallery-item gallery-item-1" data-cursor>
+      <div class="gallery-item-bg bg1"></div>
+      <div class="gallery-item-content">
+        <span class="gallery-tag" data-i18n="gallery.1.tag">/ 01 — Главный зал</span>
+        <h3 class="gallery-title"><span data-i18n="gallery.1.title.1">Главный</span><br><span data-i18n="gallery.1.title.2">зал</span></h3>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-2" data-cursor>
+      <div class="gallery-item-bg bg2"></div>
+      <div class="gallery-item-content">
+        <span class="gallery-tag" data-i18n="gallery.2.tag">/ 02 — Расписание</span>
+        <h3 class="gallery-title">06:00 – 23:00</h3>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-3" data-cursor>
+      <div class="gallery-item-bg bg3"></div>
+      <div class="gallery-item-content">
+        <span class="gallery-tag" data-i18n="gallery.3.tag">/ 03 — Свободные веса</span>
+        <h3 class="gallery-title"><span data-i18n="gallery.3.title.1">Силовая</span><br><span data-i18n="gallery.3.title.2">зона</span></h3>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-4" data-cursor>
+      <div class="gallery-item-bg bg4"></div>
+      <div class="gallery-item-content">
+        <span class="gallery-tag" data-i18n="gallery.4.tag">/ 04 — Кардио</span>
+        <h3 class="gallery-title" data-i18n="gallery.4.title">Кардио</h3>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-5" data-cursor>
+      <div class="gallery-item-bg bg5"></div>
+      <div class="gallery-item-content">
+        <span class="gallery-tag" data-i18n="gallery.5.tag">/ 05 — Сообщество</span>
+        <h3 class="gallery-title" data-i18n="gallery.5.title">Команда</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section class="coaches" id="coaches">
+  <div class="coaches-header reveal">
+    <div class="section-label" data-i18n="coaches.label">Команда</div>
+    <h2 class="section-title split-text"><span data-i18n="coaches.title.1">Тренеры, которым</span> <span class="accent" data-i18n="coaches.title.2">доверяют</span></h2>
+  </div>
+
+  <div class="coaches-grid reveal-stagger">
+    <div class="coach-card" data-cursor>
+      <div class="coach-bg"></div>
+      <div class="coach-num">/ 01</div>
+      <div class="coach-silhouette">
+        <svg viewBox="0 0 100 200" fill="white">
+          <circle cx="50" cy="30" r="18"/>
+          <path d="M30 65 Q50 55 70 65 L72 130 L65 130 L62 95 L60 200 L55 200 L52 130 L48 130 L45 200 L40 200 L38 95 L35 130 L28 130 Z"/>
+        </svg>
+      </div>
+      <div class="coach-info">
+        <h3 class="coach-name">Алекс М.</h3>
+        <div class="coach-role" data-i18n="coaches.1.role">Главный тренер · Сила</div>
+      </div>
+    </div>
+
+    <div class="coach-card" data-cursor>
+      <div class="coach-bg"></div>
+      <div class="coach-num">/ 02</div>
+      <div class="coach-silhouette">
+        <svg viewBox="0 0 100 200" fill="white">
+          <circle cx="50" cy="28" r="16"/>
+          <path d="M32 60 Q50 52 68 60 L70 110 Q75 130 70 145 L62 145 L60 100 L58 200 L52 200 L50 130 L48 200 L42 200 L40 100 L38 145 L30 145 Q25 130 30 110 Z"/>
+        </svg>
+      </div>
+      <div class="coach-info">
+        <h3 class="coach-name">Дина К.</h3>
+        <div class="coach-role" data-i18n="coaches.2.role">Групповые · Йога</div>
+      </div>
+    </div>
+
+    <div class="coach-card" data-cursor>
+      <div class="coach-bg"></div>
+      <div class="coach-num">/ 03</div>
+      <div class="coach-silhouette">
+        <svg viewBox="0 0 100 200" fill="white">
+          <circle cx="50" cy="30" r="18"/>
+          <path d="M28 68 Q50 56 72 68 L75 135 L67 135 L64 100 L62 200 L56 200 L53 135 L47 135 L44 200 L38 200 L36 100 L33 135 L25 135 Z"/>
+        </svg>
+      </div>
+      <div class="coach-info">
+        <h3 class="coach-name">Рустам А.</h3>
+        <div class="coach-role" data-i18n="coaches.3.role">Функциональный · HIIT</div>
+      </div>
+    </div>
+
+    <div class="coach-card" data-cursor>
+      <div class="coach-bg"></div>
+      <div class="coach-num">/ 04</div>
+      <div class="coach-silhouette">
+        <svg viewBox="0 0 100 200" fill="white">
+          <circle cx="50" cy="29" r="17"/>
+          <path d="M30 62 Q50 54 70 62 L72 115 Q76 132 71 142 L64 142 L61 98 L59 200 L54 200 L51 132 L49 132 L46 200 L41 200 L39 98 L36 142 L29 142 Q24 132 28 115 Z"/>
+        </svg>
+      </div>
+      <div class="coach-info">
+        <h3 class="coach-name">Камила Р.</h3>
+        <div class="coach-role" data-i18n="coaches.4.role">Пилатес · Стретчинг</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="location-grid">
+    <div class="location-info reveal">
+      <div class="section-label" data-i18n="location.label">Локация</div>
+      <h2 class="location-address">
+        <span data-i18n="location.address">Mirzo Ulug'bek</span><br>
+        <span class="accent" data-i18n="location.address.2">3-3A</span>
+      </h2>
+      <div class="location-meta">
+        <div class="location-meta-item">
+          <div class="location-meta-item-label" data-i18n="location.meta.address">Адрес</div>
+          <div class="location-meta-item-value">
+            <a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdQJkSUUHQFprfX90cHVnZA==/" target="_blank" rel="noopener" data-cursor>
+              <span data-i18n="location.meta.address.value">Toshkent, Mirzo Ulug'bek koʻchasi, 3-3A</span>
+            </a>
+          </div>
+        </div>
+        <div class="location-meta-item">
+          <div class="location-meta-item-label" data-i18n="location.meta.hours">Часы работы</div>
+          <div class="location-meta-item-value"><span data-i18n="location.meta.hours.value">Ежедневно</span><br><span data-i18n="location.meta.hours.time">06:00 — 23:00</span></div>
+        </div>
+        <div class="location-meta-item">
+          <div class="location-meta-item-label" data-i18n="location.meta.phone">Телефон</div>
+          <div class="location-meta-item-value">
+            <a href="tel:+998958848800" data-cursor>+998 95 884 88 00</a>
+          </div>
+        </div>
+        <div class="location-meta-item">
+          <div class="location-meta-item-label" data-i18n="location.meta.social">Соцсети</div>
+          <div class="location-meta-item-value">
+            <a href="https://instagram.com/fitcity.chimgan" target="_blank" rel="noopener" data-cursor>@fitcity.chimgan</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdQJkSUUHQFprfX90cHVnZA==/" target="_blank" rel="noopener" class="location-cta" data-cursor data-magnetic>
+        <span>
+          <span data-i18n="location.cta">Проложить маршрут</span>
+          <svg class="location-cta-arrow" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 6H22M22 6L17 1M22 6L17 11" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="location-map reveal">
+      <div class="location-map-badge">
+        <span class="dot"></span>
+        <span>FITCITY · LIVE</span>
+      </div>
+      <iframe
+        src="https://yandex.com/map-widget/v1/?ll=69.2887%2C41.3203&mode=search&oid=82097562478&ol=biz&z=17"
+        loading="lazy"
+        allowfullscreen
+        title="FitCity на карте"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="form">
+  <div class="form-bg"></div>
+  <div class="form-inner">
+    <div class="form-header reveal">
+      <div class="section-label" data-i18n="form.label">Заявка</div>
+      <h2 class="section-title split-text">
+        <span data-i18n="form.title.1">Оставь</span>
+        <span class="accent" data-i18n="form.title.2">заявку</span>
+      </h2>
+      <p class="form-intro" data-i18n="form.intro">Менеджер свяжется в течение 15 минут и расскажет об актуальных предложениях.</p>
+    </div>
+
+    <form class="form-card reveal" id="leadForm" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label" data-i18n="form.name">Твоё имя</label>
+          <input class="form-input" type="text" name="name" id="formName" required minlength="2" data-cursor>
+          <div class="form-line"></div>
+        </div>
+        <div class="form-field">
+          <label class="form-label" data-i18n="form.phone">Телефон</label>
+          <input class="form-input" type="tel" name="phone" id="formPhone" required pattern="^\+?[0-9 ()\-]{9,}$" placeholder="+998 __ ___ __ __" data-cursor>
+          <div class="form-line"></div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" data-i18n="form.plan">Интересующий тариф</label>
+        <div class="form-plan-options" data-calc="plan">
+          <button type="button" class="form-plan-opt active" data-value="month" data-i18n="form.plan.month">Месяц</button>
+          <button type="button" class="form-plan-opt" data-value="6m" data-i18n="form.plan.half">6 месяцев</button>
+          <button type="button" class="form-plan-opt" data-value="year" data-i18n="form.plan.year">Год</button>
+          <button type="button" class="form-plan-opt" data-value="consult" data-i18n="form.plan.consult">Просто проконсультироваться</button>
+        </div>
+        <input type="hidden" name="plan" id="formPlan" value="month">
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" data-i18n="form.message">Комментарий</label>
+        <textarea class="form-input form-textarea" name="message" id="formMessage" rows="2" placeholder="Дополнительно (необязательно)" data-cursor></textarea>
+        <div class="form-line"></div>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="form-submit" id="formSubmit" data-cursor data-magnetic>
+          <span class="form-submit-text" data-i18n="form.submit">Отправить заявку →</span>
+        </button>
+        <p class="form-privacy" data-i18n="form.privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
+      </div>
+
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-content">
+    <div class="section-label" style="justify-content: center;">
+      <span style="display:inline-block; width:32px; height:1px; background:var(--red);"></span>
+      <span data-i18n="cta.tag">#НАЧНИСЕЙЧАС</span>
+      <span style="display:inline-block; width:32px; height:1px; background:var(--red);"></span>
+    </div>
+    <h2 class="cta-title">
+      <span data-i18n="cta.title.1">Твоё лучшее тело —</span><br>
+      <span class="accent" data-i18n="cta.title.2">уже внутри.</span>
+    </h2>
+    <p class="cta-subtitle" data-i18n="cta.subtitle">
+      Один шаг отделяет тебя от лучшей версии себя. Запишись на первую тренировку — она в подарок при покупке абонемента.
+    </p>
+    <div class="cta-buttons">
+      <a href="tel:+998958848800" class="cta-btn cta-btn-primary" data-cursor data-magnetic>
+        <span data-i18n="cta.call">Позвонить сейчас →</span>
+      </a>
+      <a href="https://instagram.com/fitcity.chimgan" target="_blank" rel="noopener" class="cta-btn cta-btn-secondary" data-cursor data-magnetic>
+        <span data-i18n="cta.instagram">Instagram</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <svg class="footer-logo-svg" viewBox="0 0 320 88" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(0,8)">
+          <polygon points="6,4 36,4 30,28 0,28" fill="#ff0030"/>
+          <polygon points="14,32 44,32 38,56 8,56" fill="#ff0030"/>
+        </g>
+        <text x="60" y="46" font-family="Barlow Condensed, Impact, sans-serif" font-size="56" fill="#ffffff" letter-spacing="2" font-weight="700">FITCITY</text>
+        <g transform="translate(122,56)">
+          <polygon points="6,0 168,0 162,22 0,22" fill="#ff0030"/>
+          <text x="20" y="17" font-family="Barlow Condensed, Impact, sans-serif" font-size="20" fill="#ffffff" letter-spacing="4" font-weight="600">CHIMGAN</text>
+        </g>
+      </svg>
+      <p class="footer-tagline" data-i18n="footer.tagline">Премиум фитнес-клуб в Ташкенте. Современное оборудование, опытные тренеры, атмосфера для побед.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer.nav">Навигация</div>
+      <ul>
+        <li><a href="#about" data-cursor>О клубе</a></li>
+        <li><a href="#features" data-cursor data-i18n="nav.features">Возможности</a></li>
+        <li><a href="#pricing" data-cursor data-i18n="nav.pricing">Абонементы</a></li>
+        <li><a href="#coaches" data-cursor data-i18n="nav.coaches">Тренеры</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer.contacts">Контакты</div>
+      <ul>
+        <li><a href="tel:+998958848800" data-cursor>+998 95 884 88 00</a></li>
+        <li><a href="mailto:fitcity@gmail.com" data-cursor>fitcity@gmail.com</a></li>
+        <li><a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdQJkSUUHQFprfX90cHVnZA==/" target="_blank" rel="noopener" data-cursor>Mirzo Ulug'bek, 3-3A</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer.social">Соцсети</div>
+      <ul>
+        <li><a href="https://instagram.com/fitcity.chimgan" target="_blank" rel="noopener" data-cursor>Instagram</a></li>
+        <li><a href="https://t.me/fitcityuz" target="_blank" rel="noopener" data-cursor>Telegram</a></li>
+        <li><a href="#" data-cursor>YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div data-i18n="footer.copyright">© 2026 OOO "FITCITY" · Все права защищены</div>
+    <div data-i18n="footer.made">Сделано с энергией в Ташкенте</div>
+  </div>
+</footer>
+
+<!-- Floating Telegram button -->
+<a href="https://t.me/fitcityuz" target="_blank" rel="noopener" class="floating-tg" data-cursor aria-label="Telegram">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+  </svg>
+  <span class="floating-tg-label" data-i18n="floating.tg">Написать в Telegram</span>
+</a>
+
+<!-- Sticky mobile CTA -->
+<a href="#form" class="sticky-cta" data-cursor>
+  <span data-i18n="sticky.buy">Купить абонемент</span>
+  <svg viewBox="0 0 24 12" width="22" height="12" fill="none" aria-hidden="true">
+    <path d="M0 6H22M22 6L17 1M22 6L17 11" stroke="currentColor" stroke-width="1.5"/>
+  </svg>
+</a>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
