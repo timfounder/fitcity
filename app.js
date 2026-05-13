@@ -1,6 +1,7 @@
 'use strict';
 
 const isMobile = window.matchMedia('(max-width: 900px)').matches;
+const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ============================================
@@ -8,55 +9,51 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 // ============================================
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.getElementById('preloader').classList.add('hide');
+    const pre = document.getElementById('preloader');
+    if (pre) pre.classList.add('hide');
     initSplitText();
-  }, 2200);
+  }, 800);
 });
 
 // (Native scroll behavior is used throughout — modern browsers already provide smooth feel.)
 
 // ============================================
-// Magnetic Custom Cursor
+// Magnetic Custom Cursor (desktop only — skipped on touch devices)
 // ============================================
 const cursor = document.querySelector('.cursor');
 const ring = document.querySelector('.cursor-ring');
 let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 let magnetTarget = null;
-let magnetX = 0, magnetY = 0;
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-});
+if (!isTouch && !isMobile && cursor && ring) {
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
 
-function animateRing() {
-  // If magnetic target active, ease ring towards center of element instead of cursor
-  let tx = mouseX, ty = mouseY;
-  if (magnetTarget) {
-    const rect = magnetTarget.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    // Pull cursor element a bit toward center too
-    const pullX = (cx - mouseX) * 0.25;
-    const pullY = (cy - mouseY) * 0.25;
-    cursor.style.left = (mouseX + pullX) + 'px';
-    cursor.style.top = (mouseY + pullY) + 'px';
-    tx = cx;
-    ty = cy;
+  function animateRing() {
+    let tx = mouseX, ty = mouseY;
+    if (magnetTarget) {
+      const rect = magnetTarget.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const pullX = (cx - mouseX) * 0.25;
+      const pullY = (cy - mouseY) * 0.25;
+      cursor.style.left = (mouseX + pullX) + 'px';
+      cursor.style.top = (mouseY + pullY) + 'px';
+      tx = cx;
+      ty = cy;
+    }
+    ringX += (tx - ringX) * 0.2;
+    ringY += (ty - ringY) * 0.2;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
   }
-  ringX += (tx - ringX) * 0.2;
-  ringY += (ty - ringY) * 0.2;
-  ring.style.left = ringX + 'px';
-  ring.style.top = ringY + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
+  animateRing();
 
-// Magnetic effect: elements with [data-cursor] highlight the cursor;
-// only those with [data-magnetic] also translate themselves toward cursor
-function setupMagnetic() {
   document.querySelectorAll('[data-cursor]').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.classList.add('hover');
@@ -80,8 +77,10 @@ function setupMagnetic() {
       });
     }
   });
+} else {
+  if (cursor) cursor.style.display = 'none';
+  if (ring) ring.style.display = 'none';
 }
-setupMagnetic();
 
 // ============================================
 // Particles (Hero canvas)
@@ -331,15 +330,40 @@ counters.forEach(c => counterObserver.observe(c));
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     const href = link.getAttribute('href');
-    if (href === '#') return;
+    if (href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      closeMobileMenu();
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       const targetY = target.getBoundingClientRect().top + window.scrollY - 20;
       window.scrollTo({ top: targetY, behavior: 'smooth' });
+      closeMobileMenu();
     }
   });
 });
+
+// ============================================
+// Mobile menu toggle
+// ============================================
+function closeMobileMenu() {
+  const navEl = document.getElementById('nav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  if (navEl) navEl.classList.remove('menu-open');
+  if (btn) btn.classList.remove('active');
+}
+(function initMobileMenu() {
+  const btn = document.querySelector('.mobile-menu-btn');
+  const navEl = document.getElementById('nav');
+  if (!btn || !navEl) return;
+  btn.addEventListener('click', () => {
+    const open = navEl.classList.toggle('menu-open');
+    btn.classList.toggle('active', open);
+  });
+})();
 
 // ============================================
 // Journey sticky-scroll (4 stages)
@@ -441,11 +465,19 @@ function applyTranslations(lang) {
   });
   initSplitText();
 
-  // Update meta description and OG title for SEO
+  // Update meta description and OG tags for SEO
   const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) {
-    const descKey = dict['hero.aside'];
-    if (descKey) metaDesc.setAttribute('content', descKey);
+  if (metaDesc && dict['hero.aside']) {
+    metaDesc.setAttribute('content', dict['hero.aside']);
+  }
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc && dict['hero.aside']) {
+    ogDesc.setAttribute('content', dict['hero.aside']);
+  }
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) {
+    const localeMap = { ru: 'ru_RU', uz: 'uz_UZ', en: 'en_US' };
+    ogLocale.setAttribute('content', localeMap[lang] || 'ru_RU');
   }
 
   // Recalculate calculator (number formatting may differ)
@@ -575,8 +607,11 @@ applyTranslations(currentLang);
     const plan = (planInput && planInput.value) || 'month';
     const message = document.getElementById('formMessage').value.trim();
 
-    // Basic validation
-    if (name.length < 2 || phone.length < 9) {
+    // Validation: name has letters, phone has at least 9 digits with allowed separators
+    const phoneDigits = phone.replace(/\D/g, '');
+    const phoneOk = /^\+?[\d\s()\-]{9,}$/.test(phone) && phoneDigits.length >= 9;
+    const nameOk = name.length >= 2 && /\p{L}/u.test(name);
+    if (!nameOk || !phoneOk) {
       showStatus('error', dict['form.error']);
       return;
     }
