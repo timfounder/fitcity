@@ -390,17 +390,15 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const SUPPORTED_LANGS = ['ru', 'uz', 'en'];
 
 function detectInitialLang() {
-  // 1) URL ?lang=
+  // 1) URL ?lang= — explicit per-visit override
   const urlLang = new URLSearchParams(location.search).get('lang');
   if (urlLang && SUPPORTED_LANGS.includes(urlLang)) return urlLang;
-  // 2) localStorage
+  // 2) localStorage — user's previous explicit choice
   try {
     const stored = localStorage.getItem('fc_lang');
     if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
   } catch (e) {}
-  // 3) browser language
-  const nav = (navigator.language || 'ru').slice(0, 2).toLowerCase();
-  if (SUPPORTED_LANGS.includes(nav)) return nav;
+  // 3) Default to Russian for new visitors regardless of browser locale
   return 'ru';
 }
 
